@@ -1,0 +1,20 @@
+.hero{
+    &__title-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include respond(smllst){
+            top: 40%;
+        }
+    }
+
+    &__title{
+        align-self: center;
+    }
+    
+    &__carousel-box{
+        align-self: flex-end;
+    }
+}

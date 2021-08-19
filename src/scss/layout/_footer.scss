@@ -1,0 +1,45 @@
+.footer{
+    background-color: $color-primary;
+    max-width: 100%;
+    box-shadow: 0px -2px 10px 0px rgba(0,0,0,0.3);
+
+    &__copyrights{
+        background-color: $color-primary-dark;
+        padding: 1rem 0;
+        font-size: 1.6rem;
+    }
+
+    &__info-img{
+        height: 10rem;
+        width: 10rem;
+        display: block;
+    }
+
+    &__info-img-box{
+        @include respond(ipad){
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__info{
+        @include respond(ipad){
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__contact{
+        @include respond(ipad){
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+
+    &__map{
+        @include respond(ipad){
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    }
+}

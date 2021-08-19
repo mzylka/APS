@@ -1,0 +1,53 @@
+.hamburger{
+    width: 7rem;
+    height: 7rem;
+    z-index: 10;
+    cursor: pointer;
+
+    display: none;
+
+    @include respond(ipad){
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: auto;
+    }
+
+    @include respond(smllst){
+        width: 6rem;
+        height: 6rem;
+    }
+
+    &:before,
+    &:after,
+    &__icon{
+        content: "";
+        display: block;
+        width: 100%;
+        height: 7px;
+        background-color: $color-font;
+        transition: ease .5s transform;
+    }
+
+    &:before{
+        transform-origin: 0 0;
+    }
+
+    &:after{
+        transform-origin: 0 100%;
+    }
+
+    &--close{
+        .hamburger__icon{
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        
+        &:before{
+            transform: rotate(45deg) scaleX(1.26); 
+        }
+        &:after{
+            transform: rotate(-45deg) scaleX(1.26) translateY(-1px);
+        }
+    }
+}

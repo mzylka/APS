@@ -1,0 +1,61 @@
+.service{
+    &__text-column{
+        display: flex;
+        @include respond(ipad){
+            order: 2;
+        }
+    }
+
+    &__img-column{
+        @include respond(ipad){
+            order: 1;
+        }
+    }
+
+    &__img-box{
+        &--from-left{
+            transform: translateX(-10rem);
+            opacity: 0;
+        }
+
+        &--from-right{
+            transform: translateX(10rem);
+            opacity: 0;
+        }
+
+        &--visible{
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 1s ease;
+
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__img{
+        display: block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    &__text{
+        opacity: 0;
+        
+        &--from-left{
+            transform: translateX(-10rem);
+            align-self: stretch;
+        }
+
+        &--from-right{
+            transform: translateX(10rem);
+            align-self: stretch;
+        }
+
+        &--visible{
+            opacity: 1;
+            transform: translateX(0);
+            transition: all 1s ease;
+        }
+    }
+}

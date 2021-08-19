@@ -1,0 +1,118 @@
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba($color-primary, 0.25);
+    box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.2);
+    color: white;
+    z-index: 2000;
+
+    transition: background-color ease-in-out .6s;
+
+    @include respond(ipad){
+        background-color: $color-primary;
+    }
+
+    &--scrolling{
+        background-color: $color-primary;
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: row;
+
+        @include respond(ipad){
+            flex-direction: column;
+        }
+    }
+
+    &__top{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__logo-box{
+        margin: .4rem 0;
+    }
+
+    &__logo-link{
+        display: block;
+        height: 10rem;
+        width: 10rem;
+
+        @include respond(smllst){
+            height: 6rem;
+            width: 6rem;
+        }
+    }
+
+    &__logo{
+        height: 10rem;
+        width: 10rem;
+        display: block;
+
+        @include respond(smllst){
+            height: 6rem;
+            width: 6rem;
+        }
+    }
+
+    &__navigation{
+        display: flex;
+        flex-grow: 1;
+        text-decoration: none;
+
+        font-size: 2.2rem;
+        font-weight: 400;
+
+        @include respond(ipad){
+            display: none;
+            margin-top: 1rem;
+        }
+
+        &--visible{
+            display: flex;
+        }
+    }
+
+    &__list{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+        @include respond(ipad){
+            flex-direction: column;
+            margin-left: 0;
+            flex-grow: 1;
+        }
+    }
+
+    &__list-item{
+        margin: 0 2rem;
+
+        @include respond(ipad){
+            width: 100%;
+            margin: 0;
+            border-top: 1px solid black;
+        }
+    }
+
+    &__link{
+        text-decoration: none;
+        color: white;
+
+        &:hover{
+            transition: color .2s ease;
+            color: $color-secondary;
+        }
+
+        @include respond(ipad){
+            display: block;
+            padding: 2rem 0;
+            text-align: center;
+        }
+    }
+}

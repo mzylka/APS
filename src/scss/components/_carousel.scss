@@ -1,0 +1,63 @@
+@keyframes in{
+	from {visibility: hidden; opacity: 0; transform: translateX(100%);} 
+	to {visibility: visible; opacity: 1; transform: translateX(0);}
+}
+
+@keyframes out{
+	from {opacity: 1; transform: translateX(0);} 
+	to {opacity: 0; transform: translateX(-100%);}
+}
+
+.carousel{
+	display: flex;
+	justify-content: center;
+	max-width: $grid-width;
+	margin: 0 auto;
+
+	&__container{
+		position: relative;
+
+		&--hero{
+			width: 36rem;
+			height: 30rem;
+		}
+
+		&--service{
+			width: 30rem;
+			height: 12rem;
+		}
+	}
+
+	&__item{
+		position: absolute;
+		opacity: 0;
+
+		&--disable{
+			animation: out 1s ease;
+			opacity: 0;
+		}
+
+		&--active{
+			animation: in 1s ease;
+			opacity: 1;
+			z-index: 200;
+		}
+
+		&--hero{
+			cursor: pointer;
+		}
+	}
+
+	&__img{
+		display: block;
+		&--hero{
+			width: 36rem;
+			height: 30rem;
+		}
+
+		&--service{
+			width: 30rem;
+			height: 12rem;
+		}
+	}
+}
