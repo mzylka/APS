@@ -4,7 +4,7 @@ import observe from "./js/Observe";
 import headerHandle from "./js/HeaderHandle";
 import hamburgerHandle from "./js/Hamburger";
 import Carousel from "./js/Carousel";
-//import Modal from "./js/Modal";
+import Modal from "./js/Modal";
 
 
 const form = document.getElementById("contactForm");
@@ -24,6 +24,6 @@ const carousel2 = new Carousel(serviceCarousel);
 carousel1.start();
 carousel2.start();
 
-//const modal = new Modal();
-//modal.addEvents();
+const modal = new Modal();
+modal.addEvents();
 

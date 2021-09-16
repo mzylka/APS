@@ -12,6 +12,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
 */
 
 @mixin respond($breakpoint){
+    @if $breakpoint == iphone{
+        @media(max-width: 25em){@content}; //400px
+    }
     @if $breakpoint == smllst{
         @media(max-width: 31.25em){@content}; //500px
     } 
@@ -26,6 +29,9 @@ ORDER: Base + typography > general layout + grid > page layout > components
     }
     @if $breakpoint == lrg{
         @media(max-width: 68.75em){@content}; //1100
+    }
+    @if $breakpoint == lrgmax{
+        @media(max-width: 75em){@content}; //1200
     }
     @if $breakpoint == lrgst{
         @media(min-width: 75em){@content}; //1200
