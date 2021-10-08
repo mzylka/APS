@@ -4,14 +4,11 @@ export default class Modal{
     }
 
     addEvents(){
-        const container = document.querySelector(".modal__container");
-        container.addEventListener("click", (e) => {e.stopPropagation();});
-
         const closeIcon = document.querySelector(".modal__close");
         closeIcon.addEventListener("click", () => {this.closeModal();});
         this._modal.addEventListener("click", () => {this.closeModal();});
 
-        setTimeout(() => {this.closeModal()}, 4000);
+        setTimeout(() => {this.closeModal()}, 3400);
     }
 
     closeModal(){

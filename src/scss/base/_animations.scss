@@ -52,8 +52,35 @@
     to {opacity: 1; transform: translateX(0);}
 }
 
-//carousel
+//CAROUSEL
 @keyframes scroll {
 	0% { transform: translateX(0); }
 	100% { transform: translateX(calc(-250px * 7))}
+}
+
+@keyframes carouselIn{
+	from {visibility: hidden; opacity: 0; transform: translateX(100%);} 
+	to {visibility: visible; opacity: 1; transform: translateX(0);}
+}
+
+@keyframes carouselOut{
+	from {opacity: 1; transform: translateX(0);} 
+	to {opacity: 0; transform: translateX(-100%);}
+}
+
+//MODAL
+@keyframes modal-anim{
+    0% {visibility: visible ; opacity: 1;}
+    100% {visibility: hidden; opacity: 0;}
+}
+
+@keyframes appear{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes second-anim {
+    0% {opacity: 0; transform: scale(0.9)}
+    50% {opacity: 1; transform: scale(1.1);}
+    100% {transform: scale(1);}
 }

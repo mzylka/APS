@@ -1,19 +1,16 @@
-@keyframes modal-anim{
-    0% {visibility: visible ; opacity: 1;}
-    100% {visibility: hidden; opacity: 0;}
-}
-
 .modal{
     position: fixed;
     z-index: 3000;
     left: 0;
     top: 0;
-    width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0, 0.35), rgba(0,0,0, 0.35)), url("./images/forest.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    &--visible{
+    &--visible{     //visibility
         visibility: visible;
     }
 
@@ -26,59 +23,47 @@
         display: none;
     }
 
-    &__container{
+    //TEXT BOX
+    &__text{
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 120rem;
-        transform: translate(-50%, -50%);
-        background-color: $color-primary;
-        font-size: $default-font-size;
-        padding: .5rem;
-
-        @include respond(lrgst){
-            width: 100rem;
-        }
-        @include respond(lrgmax){
-            width: 95rem;
-        }
-        @include respond(lrg){
-            width: 90rem;
-        }
-        @include respond(med){
-            width: 80rem;
-        }
-        @include respond(ipad){
-            width: 65rem;
-        }
-        @include respond(smll){
-            width: 60rem;
-        }
-        @include respond(smllst){
-            width: 50rem;
-        }
-        @include respond(iphone){
-            width: 40rem;
-        }
-        @include respond(hg){
-            width: 120rem;
-        }
-    }
-
-    &__img{
-        max-width: 100%;
-        height: auto;
-        display: block; 
-    }
-
-    &__text{
-        position: absolute;
-        top: 45%;
-        left: 50%;
         transform: translate(-50%, -50%);
         font-size: 6rem;
+        text-align: center;
+        letter-spacing: 0.6rem;
+        backface-visibility: hidden;
+
+        @include respond(ipad){
+            font-size: 3.8rem;
+        }
+        @include respond(iphone){
+            font-size: 3.2rem;
+        }
+
+        &--first{
+            display: block;
+
+            animation: appear 2s ease-out;
+        }
+
+        &--second{
+            display: block;
+            text-transform: uppercase;
+            backface-visibility: hidden;
+
+            animation: second-anim 2s ease-out;
+        }
+
+        &--third{     
+            display: block;
+
+            animation: appear 2s ease-out;
+        }
     }
 
+
+    //ICON
     &__close{
         position: absolute;
         right: 1rem;
