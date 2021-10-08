@@ -8,7 +8,7 @@ export default class Modal{
         closeIcon.addEventListener("click", () => {this.closeModal();});
         this._modal.addEventListener("click", () => {this.closeModal();});
 
-        setTimeout(() => {this.closeModal()}, 3400);
+        setTimeout(() => {this.closeModal()}, 4000);
     }
 
     closeModal(){
